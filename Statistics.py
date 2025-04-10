@@ -67,7 +67,7 @@ class Statistics:
                         Statistics.chain +=[block]
         elif p.model==2:
                 for i in c.global_chain:
-                        block= [i.depth, i.id, i.previous, i.timestamp, i.miner, len(i.transactions), i.usedgas, len(i.uncles)]
+                        block= [i.depth, i.id, i.previous, i.timestamp, i.miner, len(i.transactions), i.usedgas, len(i.uncles), i.transactions_creation_time]
                         Statistics.chain +=[block]
 
     ########################################################### Print simulation results to Excel ###########################################################################################
@@ -84,7 +84,7 @@ class Statistics:
 
         df4 = pd.DataFrame(Statistics.chain)
         #df4.columns= ['Block Depth', 'Block ID', 'Previous Block', 'Block Timestamp', 'Miner ID', '# transactions','Block Size']
-        if p.model==2: df4.columns= ['Block Depth', 'Block ID', 'Previous Block', 'Block Timestamp', 'Miner ID', '# transactions','Block Limit', 'Uncle Blocks']
+        if p.model==2: df4.columns= ['Block Depth', 'Block ID', 'Previous Block', 'Block Timestamp', 'Miner ID', '# transactions','Block Limit', 'Uncle Blocks', 'Transactions Creation Time']
         else: df4.columns= ['Block Depth', 'Block ID', 'Previous Block', 'Block Timestamp', 'Miner ID', '# transactions', 'Block Size']
 
         writer = pd.ExcelWriter(fname, engine='xlsxwriter')
