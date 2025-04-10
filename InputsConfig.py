@@ -7,7 +7,7 @@ class InputsConfig:
     2 : Ethereum model
         3 : AppendableBlock model
     """
-    model = 3
+    model = 2
 
     ''' Input configurations for the base model '''
     if model == 0:
@@ -107,7 +107,7 @@ class InputsConfig:
         simTime = 500  # the simulation length (in seconds)
         Runs = 2  # Number of simulation runs
 
-        ''' Input configurations for AppendableBlock model '''
+    ''' Input configurations for AppendableBlock model '''
     if model == 3:
         ''' Transaction Parameters '''
         hasTrans = True  # True/False to enable/disable transactions in the simulator
