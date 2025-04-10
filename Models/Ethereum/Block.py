@@ -32,3 +32,11 @@ class Block(BaseBlock):
         self.uncles= uncles
         self.gaslimit= gaslimit
         self.usedgas= usedgas
+        self.transactions_creation_time = 0
+    
+    # Calculate the sum of the creation times of the transactions
+    def calculate_transactions_creation_time(self):
+        acc =0
+        for t in self.transactions:
+            acc += t.creation_time
+        self.transactions_creation_time = acc
