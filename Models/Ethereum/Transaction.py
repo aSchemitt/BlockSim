@@ -33,7 +33,8 @@ class Transaction(object):
          usedGas=0,
          gasPrice=0,
          fee=0,
-         creation_time = 0.0):
+         creation_time = 0.0,
+         verification_time = 0.0):
 
         self.id = id
         self.timestamp = timestamp
@@ -47,6 +48,7 @@ class Transaction(object):
         self.fee= usedGas * gasPrice
         # Creation time in the transaction based on benchmarks
         self.creation_time = creation_time
+        self.verification_time = verification_time
 
 
 
@@ -76,6 +78,7 @@ class LightTransaction():
             tx.gasPrice=gasPrice[i]/1000000000
             tx.fee= tx.usedGas * tx.gasPrice
             tx.creation_time = calculate_creation_time()
+            tx.creation_time = calculate_verification_time()
 
             LightTransaction.pool += [tx]
 
@@ -127,6 +130,7 @@ class FullTransaction():
             tx.gasPrice=gasPrice[i]/1000000000
             tx.fee= tx.usedGas * tx.gasPrice
             tx.creation_time = calculate_creation_time()
+            tx.creation_time = calculate_verification_time()
 
             sender.transactionsPool.append(tx)
             FullTransaction.transaction_prop(tx)
@@ -161,6 +165,12 @@ class FullTransaction():
 
 # TODO use the more acurate values
 def calculate_creation_time():
-    mean = 158776.3764
-    standard_deviation = 251934.67217675407
+    mean = 113086.11
+    standard_deviation = 52726.01806856582
+    return random.gauss(mu=mean,sigma=standard_deviation)
+
+# TODO use the more acurate values
+def calculate_verification_time():
+    mean = 168494.84
+    standard_deviation = 76488.34803431689
     return random.gauss(mu=mean,sigma=standard_deviation)
