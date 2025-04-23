@@ -78,7 +78,7 @@ class LightTransaction():
             tx.gasPrice=gasPrice[i]/1000000000
             tx.fee= tx.usedGas * tx.gasPrice
             tx.creation_time = calculate_creation_time()
-            tx.creation_time = calculate_verification_time()
+            tx.verification_time = calculate_verification_time()
 
             LightTransaction.pool += [tx]
 
@@ -130,7 +130,7 @@ class FullTransaction():
             tx.gasPrice=gasPrice[i]/1000000000
             tx.fee= tx.usedGas * tx.gasPrice
             tx.creation_time = calculate_creation_time()
-            tx.creation_time = calculate_verification_time()
+            tx.verification_time = calculate_verification_time()
 
             sender.transactionsPool.append(tx)
             FullTransaction.transaction_prop(tx)
