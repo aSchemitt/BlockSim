@@ -107,6 +107,11 @@ class InputsConfig:
         simTime = 500  # the simulation length (in seconds)
         Runs = 2  # Number of simulation runs
 
+        """ Other Parameters """
+        Signing_Algorithm = "ECDSA384"
+        # Signing_Algorithm = "Dillithium3"
+        # Signing_Algorithm = "Sphincs+192f"
+
     ''' Input configurations for AppendableBlock model '''
     if model == 3:
         ''' Transaction Parameters '''
