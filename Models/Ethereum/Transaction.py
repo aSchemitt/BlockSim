@@ -171,6 +171,14 @@ def calculate_creation_time():
 
 # TODO use the more acurate values
 def calculate_verification_time():
-    mean = 168494.84
-    standard_deviation = 76488.34803431689
+    # Dillithium3
+    mean = 0.0372276401000004
+    standard_deviation = 0.000590839136290065
+    # Sphinc+ 192f
+    # mean = 0.6385802532
+    # standard_deviation = 0.00761349059693967
+    # ECDSA384
+    # mean = 3.0861729427
+    # standard_deviation = 0.0372862098803376
+
     return random.gauss(mu=mean,sigma=standard_deviation)
