@@ -171,12 +171,23 @@ def calculate_creation_time():
 
 # TODO use the more acurate values
 def calculate_verification_time():
+    # Python
     # ECDSA384
     # mean = 0.0372276401000004
     # standard_deviation = 0.000590839136290065
     # Dillithium3
+    # mean = 0.0372276401000004
+    # standard_deviation = 0.000590839136290065
+    # Sphinc+ 192f
+    # mean = 0.6385802532
+    # standard_deviation = 0.00761349059693967
+    # Java
+    # ECDSA384
     mean = 0.0372276401000004
     standard_deviation = 0.000590839136290065
+    # Dillithium3
+    # mean = 0.0372276401000004
+    # standard_deviation = 0.000590839136290065
     # Sphinc+ 192f
     # mean = 0.6385802532
     # standard_deviation = 0.00761349059693967
