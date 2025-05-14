@@ -171,25 +171,27 @@ def calculate_creation_time():
 
 # TODO use the more acurate values
 def calculate_verification_time():
-    # Python
-    # ECDSA384
-    # mean = 0.0372276401000004
-    # standard_deviation = 0.000590839136290065
-    # Dillithium3
-    # mean = 0.0372276401000004
-    # standard_deviation = 0.000590839136290065
-    # Sphinc+ 192f
-    # mean = 0.6385802532
-    # standard_deviation = 0.00761349059693967
-    # Java
-    # ECDSA384
-    mean = 0.0372276401000004
-    standard_deviation = 0.000590839136290065
-    # Dillithium3
-    # mean = 0.0372276401000004
-    # standard_deviation = 0.000590839136290065
-    # Sphinc+ 192f
-    # mean = 0.6385802532
-    # standard_deviation = 0.00761349059693967
+    language_algorithm = (p.means_from_language, p.Signing_Algorithm)
+
+    match language_algorithm:
+        case ("Java", "ECDSA384"):
+            mean = 0.18335970950
+            standard_deviation = 0.01330874960
+        case ("Java", "Dillithium3"):
+            mean = 0.49128941910
+            standard_deviation = 0.30889319890 
+        case ("Java", "Sphincs+192f"):
+            mean = 56.09813371590
+            standard_deviation = 0.38878176013
+
+        case ("Python", "ECDSA384"):
+            mean = 0.36977098660
+            standard_deviation = 0.00168400000
+        case ("Python", "Dillithium3"):
+            mean = 0.03722764010
+            standard_deviation = 0.00059083910
+        case ("Python", "Sphincs+192f"):
+            mean = 0.63858025320
+            standard_deviation = 0.00761349060
 
     return random.gauss(mu=mean,sigma=standard_deviation)
