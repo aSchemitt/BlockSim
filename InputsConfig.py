@@ -105,12 +105,15 @@ class InputsConfig:
 
         ''' Simulation Parameters '''
         simTime = 500  # the simulation length (in seconds)
-        Runs = 2  # Number of simulation runs
+        Runs = 1000  # Number of simulation runs
 
         """ Other Parameters """
         Signing_Algorithm = "ECDSA384"
         # Signing_Algorithm = "Dillithium3"
         # Signing_Algorithm = "Sphincs+192f"
+        
+        means_from_language = "Java"
+        # means_from_language = "Python"
 
     ''' Input configurations for AppendableBlock model '''
     if model == 3:
