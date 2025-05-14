@@ -76,11 +76,11 @@ def main():
             ########## reset all global variable before the next run #############
             Statistics.reset()  # reset all variables used to calculate the results
             Node.resetState()  # reset all the states (blockchains) for all nodes in the network
-            fname = "{0}(Allverify)1day_{1}M_{2}K.xlsx".format(p.Signing_Algorithm,
+            fname = "{0}(Allverify)1day_{1}M_{2}K.xlsx".format(p.means_from_language+"-"+p.Signing_Algorithm,
                 p.Bsize/1000000, p.Tn/1000)
             # print all the simulation results in an excel file
             Statistics.print_to_excel(fname)
-            fname = "{0}(Allverify)1day_{1}M_{2}K.xlsx".format(p.Signing_Algorithm,
+            fname = "{0}(Allverify)1day_{1}M_{2}K.xlsx".format(p.means_from_language+"-"+p.Signing_Algorithm,
                 p.Bsize/1000000, p.Tn/1000)
             # print all the simulation results in an excel file
             Statistics.print_to_excel(fname)
