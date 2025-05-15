@@ -114,6 +114,7 @@ class InputsConfig:
         
         means_from_language = "Java"
         # means_from_language = "Python"
+        # means_from_language = "C/C++"
 
     ''' Input configurations for AppendableBlock model '''
     if model == 3:
