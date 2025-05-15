@@ -194,10 +194,10 @@ def calculate_verification_time():
             mean = 0.63858025320
             standard_deviation = 0.00761349060
 
-        case ("C/C++", "ECDSA384"):
+        case ("C-C++", "ECDSA384"):
             mean = 1.02015166
             standard_deviation = 0.005019122382
-        case ("C/C++", "Dillithium3"):
+        case ("C-C++", "Dillithium3"):
             mean = 0.1111510
             standard_deviation = 0.06584563651
 
